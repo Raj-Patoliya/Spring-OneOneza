@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>OneOneza</title>
+<script src="assets/js/peerjs.js"></script>
+<script  type="text/javascript">
+/* $(document).ready(function(){
+var roomId = $("#roomId").val();
+if(roomId!=null && roomId!=''){
+joinRoom();
+}
+}); */
+ 
+const PRE = "Demo"
+const SUF = "Meet"
+var room_id;
+var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+var local_stream;
+var screenStream;
+var peer = null;
+var currentPeer = null
+var screenSharing = false
+function createRoom() {	
+   console.log("Creating Room")
+   let room = document.getElementById("room-input").value;
+   if (room == " " || room == "") {
+       alert("Please enter room number")
+       return;
+   }
+   /* document.getElementById("roomUrl").innerHTML = "${appProperties['application.base.url']}/screen-share?roomId="+room */
+   room_id = PRE + room + SUF;
+   peer = new Peer(room_id)
+   peer.on('open', (id) => {
+       console.log("Peer Connected with ID: ", id)
+       hideModal()
+       getUserMedia({ video: true, audio: true }, (stream) => {
+           local_stream = stream;
+           setLocalStream(local_stream)
+       }, (err) => {
+           console.log(err)
+       })
+       notify("Waiting for peer to join.")
+   })
+   peer.on('call', (call) => {
+       call.answer(local_stream);
+       call.on('stream', (stream) => {
+           setRemoteStream(stream)
+       })
+       currentPeer = call;
+   })
+}
+function hideVideo(){
+var videoTrack = local_stream.getTracks().find(track=>track.kind==='video');
+if(videoTrack.enabled){
+videoTrack.enabled=false;
+document.getElementById("hideCam").innerHTML = 'Show Video'
+}else{
+videoTrack.enabled=true;
+document.getElementById("hideCam").innerHTML = 'Hide Video'
+}
+}
+function muteAudio(){
+var audioTrack = local_stream.getTracks().find(track=>track.kind==='audio');
+if(audioTrack.enabled){
+audioTrack.enabled=false;
+document.getElementById("mute").innerHTML = 'Unmute'
+}else{
+audioTrack.enabled=true;
+document.getElementById("mute").innerHTML = 'Mute'
+}
+}
+function closeConn() {
+var videoTrack = local_stream.getTracks().find(track=>track.kind==='video');
+if(videoTrack.enabled){
+videoTrack.enabled=false;
+}
+notify("You closed the room.")
+setTimeout(() => {
+window.location.href ="/meet";
+   }, 2000)
+}
+
+function setLocalStream(stream) {
+   let video = document.getElementById("local-video");
+  video.srcObject = stream;
+  video.play();
+  var videoTrack = local_stream.getTracks().find(track=>track.kind==='video');
+if(videoTrack.enabled){
+videoTrack.enabled=false;
+}
+}
+
+function setRemoteStream(stream) {
+   let video = document.getElementById("remote-video");
+   video.srcObject = stream;
+   video.play();
+}
+
+function hideModal() {
+   document.getElementById("entry-modal").hidden = true
+}
+
+function notify(msg) {
+   let notification = document.getElementById("notification")
+   notification.innerHTML = msg
+   notification.hidden = false
+   setTimeout(() => {
+       notification.hidden = true;
+   }, 3000)
+}
+
+function joinRoom() {
+   console.log("Joining Room")
+   let room = document.getElementById("room-input").value;
+   if (room == " " || room == "") {
+       alert("Please enter room number")
+       return;
+   }
+   room_id = PRE + room + SUF;
+   hideModal()
+   peer = new Peer()
+   peer.on('open', (id) => {
+       console.log("Connected with Id: " + id)
+       getUserMedia({ video: true, audio: true }, (stream) => {
+           local_stream = stream;
+           setLocalStream(local_stream)
+           notify("Joining peer")
+           let call = peer.call(room_id, stream)
+           call.on('stream', (stream) => {
+               setRemoteStream(stream);
+           })
+           currentPeer = call;
+       }, (err) => {
+           console.log(err)
+       })
+
+   })
+}
+function startScreenShare() {
+   if (screenSharing) {
+       stopScreenSharing()
+   }
+   navigator.mediaDevices.getDisplayMedia({ video: true }).then((stream) => {
+       screenStream = stream;
+       let videoTrack = screenStream.getVideoTracks()[0];
+       videoTrack.onended = () => {
+           stopScreenSharing()
+       }
+       if (peer) {
+           let sender = currentPeer.peerConnection.getSenders().find(function (s) {
+               return s.track.kind == videoTrack.kind;
+           })
+           sender.replaceTrack(videoTrack)
+           screenSharing = true
+       }
+       console.log(screenStream);
+   })
+}
+
+function stopScreenSharing() {
+   if (!screenSharing) return;
+   let videoTrack = local_stream.getVideoTracks()[0];
+   if (peer) {
+       let sender = currentPeer.peerConnection.getSenders().find(function (s) {
+           return s.track.kind == videoTrack.kind;
+       })
+       sender.replaceTrack(videoTrack)
+   }
+   screenStream.getTracks().forEach(function (track) {
+       track.stop();
+   });
+   screenSharing = false
+}
+</script>
+<style>
+/* .video{
+height:300px;
+width:400px;
+} */
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title{
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 1;
+    display: block;
+ 
+    position: absolute;
+    background-color: #444444;
+    color: white;
+   margin: 0;
+}
+
+.entry-modal{
+    border: 1px solid #444444;
+    width: 300px;
+    margin: auto;
+    z-index: 9999;
+    position: absolute;
+    left: 75%;
+    top: 70;
+    margin-left: -150px;
+    padding: 5px;
+    color: #fff;
+    background-color: #444444;
+    text-align: center;
+}
+
+#notification{
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    top: 47.33px;
+    font-size: 18pt;
+    width: 100%;
+    background-color: orange;
+}
+
+
+.room-input{
+  border: none;
+  padding:5px;
+}
+
+button{
+    margin: 3px;
+    padding: 5px;
+}
+
+#remote-video{
+   top: 5;
+    height: 900px;
+    width: 1500px;
+    left: 0;
+    background-color: lightgray;
+    position: absolute;
+}
+
+#local-video{
+    top: 51px;
+    right:5px;
+    width: 100px;
+    object-fit: cover;
+    height: 100px;
+    z-index: 1;
+    background-color: #444444;
+    position: absolute;
+}
+.meet-controls-bar{
+    bottom: 0;
+    background-color: black;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+<!-- <input type="hidden" id="roomId" value="${roomId}"> -->
+<div class="twelve-columns full-width large-margin-top align-center">
+<div class="columns">
+    <p id="notification" hidden></p>
+    <div class="entry-modal large-margin-top" id="entry-modal">
+        <p>Create or Join Meeting</p>
+        <input id="room-input" class="room-input" placeholder="Enter Room Id">
+        <div>
+            <button onclick="createRoom()">Create Room</button>
+            <button onclick="joinRoom()">Join Room</button>
+        </div>
+    </div>
+    <div class="meet-area">
+        <!-- Remote Video Element -->
+        <!-- <div class="nine-columns twelve-columns-mobile"> -->
+   <div class="align-center large-margin-bottom">
+      <video id="remote-video"></video>
+        </div>
+        <!-- </div> -->
+
+       <!--  Local Video Element -->
+        <!-- <div class="three-columns twelve-columns-mobile"> -->
+   <div class="align-center large-margin-bottom">
+      <video id="local-video" autoplay="true" muted="muted"></video>
+       </div>
+       <!--  </div> -->
+        <div class="meet-controls-bar">
+            <button onclick="startScreenShare()">Screen Share</button>
+            <button onclick="closeConn()">Close Room</button>
+           <button class="button" id="hideCam" onclick="hideVideo()" >Show Video</button>
+            <button class="button" id="mute" onclick="muteAudio()" >Mute</button>
+            <!-- <span class="align-center large-margin-top large-margin-bottom" style="background-color:white" id="roomUrl"></span> -->
+        </div>
+    </div>
+    <!-- <h3 id="show-peer"></h3>
+    <div style="display: flex;justify-content: space-around;margin:10px;">
+   <div style="width:400px;height:300px;border:2px solid;" id="ourVideo">Our Video</div>
+   <div style="width:400px;height:300px;border:2px solid;" id="remoteVideo">remote Video</div>
+    </div>
+    <input id="peerId" placeholder="peer id">
+    <button id="call-Peer">Call Peer</button>
+    <br>
+    <button id="shareScreen">Share Screen</button> -->
+  </div>
+  </div>
+</body>

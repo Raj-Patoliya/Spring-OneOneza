@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" class="light-theme" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:form="http://form" xmlns:field="http://field">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!--start top header-->
+		<!--end top header-->
+
+		<!--start sidebar -->
+		<aside th:fragment="asidebar" class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+				<div>
+					<img src="assets/images/google-one.png" class="logo-icon"
+						alt="logo icon">
+				</div>
+				<div>
+					<h4 class="logo-text">OneOneza</h4>
+				</div>
+				<div class="toggle-icon ms-auto">
+					<i class="bi bi-list"></i>
+				</div>
+			</div>
+			<!--navigation-->
+			<ul class="metismenu" id="menu">
+				<li><a th:href="@{/dashboard}">
+						<div class="parent-icon">
+							<i class="bi bi-speedometer"></i>
+						</div>
+						<div class="menu-title">Dashboard</div>
+				</a></li>
+				<li><a th:href="@{/teacherDeptList}">
+						<div class="parent-icon">
+							<i class="lni lni-indent-increase"></i>
+						</div>
+						<div class="menu-title">Teachers</div>
+				</a></li>
+				<li><a th:href="@{/studentDeptList}">
+						<div class="parent-icon">
+							<i class="lni lni-mailchimp"></i>
+						</div>
+						<div class="menu-title">Student</div>
+				</a></li>
+				<li><a th:href="@{/departmentList}">
+						<div class="parent-icon">
+							<i class="lni lni-indent-increase"></i>
+						</div>
+						<div class="menu-title">Department</div>
+				</a></li>
+				<li><a th:href="@{/subjectAdd}">
+						<div class="parent-icon">
+							<i class="lni lni-indent-increase"></i>
+						</div>
+						<div class="menu-title">Subject</div>
+				</a></li>
+				<li><a th:href="@{/noticeAdd}">
+						<div class="parent-icon">
+							<i class="lni lni-indent-increase"></i>
+						</div>
+						<div class="menu-title">Notice</div>
+				</a></li>
+				<li><a th:href="@{/meet}">
+						<div class="parent-icon">
+							<i class="fadeIn animated bx bx-video-recording"></i>
+						</div>
+						<div class="menu-title">Meeting</div>
+				</a></li>
+			</ul>
+			<!--end navigation-->
+		</aside>
+		<!--end sidebar -->
+	</div>
+	
+	
+	
+	
+	<div th:fragment="header">
+			<header class="top-header">
+			<nav class="navbar navbar-expand gap-3">
+				<div class="mobile-toggle-icon fs-3">
+					<i class="bi bi-list"></i>
+				</div>
+				<div class="top-navbar-right ms-auto">
+					<ul class="navbar-nav align-items-center">
+						<li class="nav-item search-toggle-icon"><a class="nav-link"
+							href="#">
+								<div class="">
+									<i class="bi bi-search"></i>
+								</div>
+						</a></li>
+						<li class="nav-item dropdown dropdown-user-setting"><a
+							class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#"
+							data-bs-toggle="dropdown">
+								<div class="user-setting d-flex align-items-center">
+									<img src="assets/images/adminprorfile.jpg" class="user-img"
+										alt="">
+								</div>
+						</a>
+							<ul class="dropdown-menu dropdown-menu-end">
+								<li><a class="dropdown-item" href="#">
+										<div class="d-flex align-items-center">
+											<img src="https://via.placeholder.com/110X110" alt=""
+												class="rounded-circle" width="54" height="54">
+											<div class="ms-3">
+												<h6 class="mb-0 dropdown-user-name">Admin</h6>
+												<small class="mb-0 dropdown-user-designation text-secondary">Assistant
+													Manager</small>
+											</div>
+										</div>
+								</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item"
+									th:href="@{/admin}">
+										<div class="d-flex align-items-center">
+											<div class="">
+												<i class="bi bi-lock-fill"></i>
+											</div>
+											<div class="ms-3">
+												<span>Logout</span>
+											</div>
+										</div>
+								</a></li>
+							</ul></li>
+									</nav>
+		</header>
+	
+	</div>
+</body>
+
+</html>

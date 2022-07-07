@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/images/google-one.png" type="image/png" />
+<!--plugins-->
+<link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css"
+	rel="stylesheet" />
+<link href="assets/plugins/metismenu/css/metisMenu.min.css"
+	rel="stylesheet" />
+<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+<!-- Bootstrap CSS -->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="assets/css/bootstrap-extended.css" rel="stylesheet" />
+<link href="assets/css/style.css" rel="stylesheet" />
+<link href="assets/css/icons.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+<!-- loader-->
+<link href="assets/css/pace.min.css" rel="stylesheet" />
+
+<!--Theme Styles-->
+<link href="assets/css/dark-theme.css" rel="stylesheet" />
+<link href="assets/css/light-theme.css" rel="stylesheet" />
+<link href="assets/css/semi-dark.css" rel="stylesheet" />
+<link href="assets/css/header-colors.css" rel="stylesheet" />
+
+<title>OneOneza Public School</title>
+</head>
+<body>
+	<div class="wrapper">
+		<!--start top header-->
+	<div th:insert="Admin/sidebar :: header"></div>
+	
+			<!--end top header-->
+
+		<!--start sidebar -->
+				<div th:replace="Admin/sidebar :: asidebar"></div>
+		<!--end sidebar -->
+
+		<!--start content-->
+		<main class="page-content">
+			<!--breadcrumb-->
+			<!--breadcrumb-->
+			<div class="container py-2">	
+							<h2 class="font-weight-light text-center text-muted py-3">OneOneza Notice	</h2>
+							<!-- timeline item 1 -->
+							<div class="ms-auto">
+									<a th:href="@{/noticeAdd}" class="btn btn-outline-primary px-5">Add Notice</a>
+							</div>
+							<div class="row" th:each="notice : ${noticeList}">
+								<!-- timeline item 1 left dot -->
+								<div class="col-auto text-center flex-column d-none d-sm-flex">
+									<div class="row h-50">
+										<div class="col">&nbsp;</div>
+										<div class="col">&nbsp;</div>
+									</div>
+									<h5 class="m-2">
+									<span class="badge rounded-pill bg-light border">&nbsp;</span>
+								</h5>
+									<div class="row h-50">
+										<div class="col border-end">&nbsp;</div>
+										<div class="col">&nbsp;</div>
+									</div>
+								</div>
+								<!-- timeline item 1 event content -->
+								<div class="col py-2">
+									<div class="card radius-15">
+										<div class="card-body">
+											<div class="float-end text-muted" th:text="${notice.date}"></div>
+											<h4 class="card-title text-muted" th:text="${notice.title}"></h4>
+											<p class="card-text" th:text="${notice.descriptions}"></p>
+											<a th:href="@{/deleteNotice/{id}(id=${notice.noticeId})}" class="btn btn-danger">Delete</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--/row-->
+							<!-- timeline item 2 -->
+						</div>
+		</main>
+	</div>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<!--plugins-->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="assets/js/pace.min.js"></script>
+	<script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+	<script src="assets/js/table-datatable.js"></script>
+
+	<!--app-->
+	<script src="assets/js/app.js"></script>
+
+</body>
+</html>

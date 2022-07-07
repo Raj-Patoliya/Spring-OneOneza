@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OneOneza</title>
+<!-- favicons Icons -->
+<link rel="apple-touch-icon" sizes="180x180"
+	href="Assets_raj/images/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32"
+	href="assets/images/google-one.png" />
+<link rel="icon" type="image/png" sizes="16x16"
+	href="assets/images/google-one.png" />
+<link rel="manifest" href="Assets_raj/images/favicons/site.webmanifest" />
+<meta name="description" content="Crsine HTML Template For Car Services" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Assets_raj/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/icomoon-icons/style.css">
+    <link rel="stylesheet" href="Assets_raj/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="Assets_raj/vendors/twentytwenty/twentytwenty.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="Assets_raj/css/zilom.css" />
+    <link rel="stylesheet" href="Assets_raj/css/zilom-responsive.css" />
+</head>
+
+<body>
+
+    <div class="preloader">
+        <img class="preloader__image" width="60" src="assets/images/google-one.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+
+        <header class="main-header main-header--one  clearfix">
+            <div class="main-header--one__top clearfix">
+                <div class="container">
+                    <div class="main-header--one__top-inner clearfix">
+                        <div class="main-header--one__top-left">
+                            <div class="main-header--one__top-logo">
+                                <a href="#"><img src="assets/images/google-one.png" alt="" / style="width:70px;height:70px;"><span>One Oneza</span></a>
+                            </div>
+                        </div>
+
+                        <div class="main-header--one__top-right clearfix">
+                            <ul class="main-header--one__top-social-link list-unstyled clearfix">
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+
+                            <div class="main-header--one__top-contact-info clearfix">
+                                <ul class="main-header--one__top-contact-info-list list-unstyled">
+                                    <li class="main-header--one__top-contact-info-list-item">
+                                        <div class="icon">
+                                            <span class="icon-phone-call-1"></span>
+                                        </div>
+                                        <div class="text">
+                                            <h6>Contact OneOneza</h6>
+                                            <p><a href="tel:123456789">9874 563 210</a></p>
+                                        </div>
+                                    </li>
+          	                          <li class="main-header--one__top-contact-info-list-item">
+                                        <div class="icon">
+                                            <span class="icon-message"></span>
+                                        </div>
+                                        <div class="text">
+                                            <h6>Mail </h6>
+                                            <p><a href="#">rajpatel@oneoneza.com</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="main-header-one__bottom clearfix">
+                <div class="container">
+                    <div class="main-header-one__bottom-inner clearfix">
+                        <nav class="main-menu main-menu--1">
+                            <div class="main-menu__inner">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+
+                                <div class="left">
+                                    <ul class="main-menu__list">
+                                        <li class="dropdown current">
+                                            <a href="#">Home</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a th:href="@{/TeacherLogin}"> Teacher's Login</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a th:href="@{/StudentLogin}">Student's Login</a>
+                                        </li>
+                                    </ul>
+                                </div>	
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content">
+
+            </div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+
+        <section class="main-slider main-slider-one">
+            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true, "effect": "fade", "pagination": {
+        "el": "#main-slider-pagination",
+        "type": "bullets",
+        "clickable": true
+        },
+        "navigation": {
+        "nextEl": "#main-slider__swiper-button-next",
+        "prevEl": "#main-slider__swiper-button-prev"
+        },
+        "autoplay": {
+        "delay": 7000
+        }}'>
+
+                <div class="swiper-wrapper">
+                    <!--Start Single Swiper Slide-->
+                    <div class="swiper-slide">
+                        <div class="shape1"><img src="Assets_raj/images/shapes/slider-v1-shape1.png" alt="" /></div>
+                        <div class="shape2"><img src="Assets_raj/images/shapes/slider-v1-shape2.png" alt="" /></div>
+                        <div class="image-layer"
+                            style="background-image: url(Assets_raj/images/backgrounds/main-slider-v1-1.jpg);"></div>
+                        <!-- /.image-layer -->
+                        <div class="container">
+                            <div class="main-slider__content">
+                                <div class="main-slider__content-icon-one">
+                                    <span class="icon-lamp"></span>
+                                </div>
+                                <div class="main-slider__content-icon-two">
+                                    <span class="icon-human-resources"></span>
+                                </div>
+                                <div class="main-slider-one__round-box">
+                                    <div class="main-slider-one__round-box-inner">
+                                        <p>Professional <br>teachers</p>
+                                        <div class="icon">
+                                            <i class="fas fa-sort-up"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main-slider__content-tagline">
+                                    <h2>Ready to learn?</h2>
+                                </div>
+                                <h2 class="main-slider__content-title text-primary	">One Oneza</h2>
+                                <p class="main-slider__content-text">Get free access to 6800+ different courses from
+                                    x<br> 680 professional teachers</p>
+                                <div class="main-slider__content-btn">
+                                    <a href="#" class="thm-btn">Discover more</a>
+                                </div>
+                                <div class="main-slider-one__img">
+                                    <img src="Assets_raj/images/backgrounds/pexels-matthis-2305098 (2).jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Swiper Slide-->	
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-pagination" id="main-slider-pagination"></div>
+                <div class="main-slider__nav">
+                    <div class="swiper-button-prev" id="main-slider__swiper-button-next">
+                        <span class="icon-left"></span>
+                    </div>
+                    <div class="swiper-button-next" id="main-slider__swiper-button-prev">
+                        <span class="icon-right"></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <!--Features One Start-->
+        <section class="features-one">
+            <div class="container">
+                <div class="row">
+                    <!--Start Single Features One-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="features-one__single">
+                            <div class="features-one__single-icon">
+                                <span class="icon-empowerment"></span>
+                            </div>
+                            <div class="features-one__single-text">
+                                <h4><a href="#">Learn Skills</a></h4>
+                                <p>with unlimited courses</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Features One-->
+
+                    <!--Start Single Features One-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <div class="features-one__single">
+                            <div class="features-one__single-icon">
+                                <span class="icon-human-resources-1"></span>
+                            </div>
+                            <div class="features-one__single-text">
+                                <h4><a href="#">Expert Teachers</a></h4>
+                                <p>best & highly qualified</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Features One-->
+
+                    <!--Start Single Features One-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                        <div class="features-one__single">
+                            <div class="features-one__single-icon">
+                                <span class="icon-recruitment"></span>
+                            </div>
+                            <div class="features-one__single-text">
+                                <h4><a href="#">Certificates</a></h4>
+                                <p>value all over the world</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Features One-->
+                </div>
+            </div>
+        </section>
+        <!--Features One End-->
+
+
+
+        <!--About One Start-->
+        <section class="about-one clearfix">
+            <div class="container">
+                <div class="row">
+                    <!-- Start About One Left-->
+                    <div class="col-xl-6">
+                        <div class="about-one__left">
+                            <ul class="about-one__left-img-box list-unstyled clearfix">
+                                <li class="about-one__left-single">
+                                    <div class="about-one__left-img1">
+                                        <img src="Assets_raj/images/about/about-v1-img1.jpg" alt="" />
+                                    </div>
+                                </li>
+                                <li class="about-one__left-single">
+                                    <div class="about-one__left-img2">
+                                        <img src="Assets_raj/images/about/about-v1-img2.jpg" alt="" />
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="about-one__left-overlay">
+                                <div class="icon">
+                                    <span class="icon-relationship"></span>
+                                </div>
+                                <div class="title">
+                                    <h6>Trusted by<br><span class="odometer" data-count="8800">00</span> customers</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End About One Left-->
+
+
+                    <!-- Start About One Right-->
+                    <div class="col-xl-6">
+                        <div class="about-one__right">
+                            <div class="section-title">
+                                <span class="section-title__tagline">About Zilom Company</span>
+                                <h2 class="section-title__title">Welcome to the Online <br>Learning Center</h2>
+                            </div>
+                            <div class="about-one__right-inner">
+                                <p class="about-one__right-text">There are many variations of passages of lorem ipsum
+                                    available but the majority have suffered alteration in some form by injected humour
+                                    or randomised words which don't look.</p>
+                                <ul class="about-one__right-list list-unstyled">
+                                    <li class="about-one__right-list-item">
+                                        <div class="icon">
+                                            <span class="icon-confirmation"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Get unlimited access to 66000+ of our top courses</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="about-one__right-list-item">
+                                        <div class="icon">
+                                            <span class="icon-confirmation"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Explore a variety of fresh educational topics</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="about-one__right-list-item">
+                                        <div class="icon">
+                                            <span class="icon-confirmation"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Find the best qualitfied teacher for you</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="about-one__btn">
+                                    <a href="about.html" class="thm-btn">view all courses</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End About One Right-->
+                </div>
+            </div>
+        </section>
+        <!--About One End-->
+
+        <!--Testimonials One Start-->
+        <section class="testimonials-one clearfix">
+            <div class="auto-container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">Our Testimonials</span>
+                    <h2 class="section-title__title">What They Say?</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="testimonials-one__wrapper">
+                            <div class="testimonials-one__pattern"><img
+                                    src="Assets_raj/images/pattern/testimonials-one-left-pattern.png" alt="" /></div>
+                            <div class="shape1"><img src="Assets_raj/images/shapes/thm-shape3.png" alt="" /></div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="testimonials-one__carousel owl-carousel owl-theme owl-dot-type1">
+                                        <!--Start Single Testimonials One -->
+                                        <div class="testimonials-one__single wow fadeInUp" data-wow-delay="0ms"
+                                            data-wow-duration="1500ms">
+                                            <div class="testimonials-one__single-inner">
+                                                <h4 class="testimonials-one__single-title">Amazing Courses</h4>
+                                                <p class="testimonials-one__single-text">Lorem ipsum is simply free text
+                                                    dolor sit amet, consectetur notted adipisicing elit sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <div class="testimonials-one__single-client-info">
+                                                    <div class="testimonials-one__single-client-info-img">
+                                                        <img src="Assets_raj/images/testimonial/testimonials-v1-client-info-img1.png"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="testimonials-one__single-client-info-text">
+                                                        <h5>Kevin Martin</h5>
+                                                        <p>Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End Single Testimonials One -->
+
+                                        <!--Start Single Testimonials One -->
+                                        <div class="testimonials-one__single wow fadeInUp" data-wow-delay="100ms"
+                                            data-wow-duration="1500ms">
+                                            <div class="testimonials-one__single-inner">
+                                                <h4 class="testimonials-one__single-title">Amazing Courses</h4>
+                                                <p class="testimonials-one__single-text">Lorem ipsum is simply free text
+                                                    dolor sit amet, consectetur notted adipisicing elit sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <div class="testimonials-one__single-client-info">
+                                                    <div class="testimonials-one__single-client-info-img">
+                                                        <img src="Assets_raj/images/testimonial/testimonials-v1-client-info-img2.png"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="testimonials-one__single-client-info-text">
+                                                        <h5>Christine Eve</h5>
+                                                        <p>Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End Single Testimonials One -->
+
+                                        <!--Start Single Testimonials One -->
+                                        <div class="testimonials-one__single wow fadeInUp" data-wow-delay="200ms"
+                                            data-wow-duration="1500ms">
+                                            <div class="testimonials-one__single-inner">
+                                                <h4 class="testimonials-one__single-title">Amazing Courses</h4>
+                                                <p class="testimonials-one__single-text">Lorem ipsum is simply free text
+                                                    dolor sit amet, consectetur notted adipisicing elit sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <div class="testimonials-one__single-client-info">
+                                                    <div class="testimonials-one__single-client-info-img">
+                                                        <img src="Assets_raj/images/testimonial/testimonials-v1-client-info-img3.png"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="testimonials-one__single-client-info-text">
+                                                        <h5>David Cooper</h5>
+                                                        <p>Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End Single Testimonials One -->
+                                        <!--Start Single Testimonials One -->
+                                        <div class="testimonials-one__single wow fadeInUp" data-wow-delay="0ms"
+                                            data-wow-duration="1500ms">
+                                            <div class="testimonials-one__single-inner">
+                                                <h4 class="testimonials-one__single-title">Amazing Courses</h4>
+                                                <p class="testimonials-one__single-text">Lorem ipsum is simply free text
+                                                    dolor sit amet, consectetur notted adipisicing elit sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <div class="testimonials-one__single-client-info">
+                                                    <div class="testimonials-one__single-client-info-img">
+                                                        <img src="Assets_raj/images/testimonial/testimonials-v1-client-info-img1.png"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="testimonials-one__single-client-info-text">
+                                                        <h5>Kevin Martin</h5>
+                                                        <p>Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End Single Testimonials One -->
+                                        <!--Start Single Testimonials One -->
+                                        <div class="testimonials-one__single wow fadeInUp" data-wow-delay="100ms"
+                                            data-wow-duration="1500ms">
+                                            <div class="testimonials-one__single-inner">
+                                                <h4 class="testimonials-one__single-title">Amazing Courses</h4>
+                                                <p class="testimonials-one__single-text">Lorem ipsum is simply free text
+                                                    dolor sit amet, consectetur notted adipisicing elit sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <div class="testimonials-one__single-client-info">
+                                                    <div class="testimonials-one__single-client-info-img">
+                                                        <img src="Assets_raj/images/testimonial/testimonials-v1-client-info-img2.png"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="testimonials-one__single-client-info-text">
+                                                        <h5>Christine Eve</h5>
+                                                        <p>Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End Single Testimonials One -->
+                                        <!--Start Single Testimonials One -->
+                                        <div class="testimonials-one__single wow fadeInUp" data-wow-delay="200ms"
+                                            data-wow-duration="1500ms">
+                                            <div class="testimonials-one__single-inner">
+                                                <h4 class="testimonials-one__single-title">Amazing Courses</h4>
+                                                <p class="testimonials-one__single-text">Lorem ipsum is simply free text
+                                                    dolor sit amet, consectetur notted adipisicing elit sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <div class="testimonials-one__single-client-info">
+                                                    <div class="testimonials-one__single-client-info-img">
+                                                        <img src="Assets_raj/images/testimonial/testimonials-v1-client-info-img3.png"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="testimonials-one__single-client-info-text">
+                                                        <h5>David Cooper</h5>
+                                                        <p>Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End Single Testimonials One -->
+                                        <!--Start Single Testimonials One -->
+                                        <div class="testimonials-one__single wow fadeInUp" data-wow-delay="0ms"
+                                            data-wow-duration="1500ms">
+                                            <div class="testimonials-one__single-inner">
+                                                <h4 class="testimonials-one__single-title">Amazing Courses</h4>
+                                                <p class="testimonials-one__single-text">Lorem ipsum is simply free text
+                                                    dolor sit amet, consectetur notted adipisicing elit sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <div class="testimonials-one__single-client-info">
+                                                    <div class="testimonials-one__single-client-info-img">
+                                                        <img src="Assets_raj/images/testimonial/testimonials-v1-client-info-img1.png"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="testimonials-one__single-client-info-text">
+                                                        <h5>Kevin Martin</h5>
+                                                        <p>Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End Single Testimonials One -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Testimonials One End-->
+	
+        <!--Why Choose One Start-->
+        <section class="why-choose-one">
+            <div class="container">
+                <div class="row">
+                    <!--Start Why Choose One Left-->
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="why-choose-one__left">
+                            <div class="section-title">
+                                <span class="section-title__tagline">Why Choose Us?</span>
+                                <h2 class="section-title__title">Benefits of Learning <br>from Zilom</h2>
+                            </div>
+                            <p class="why-choose-one__left-text">There cursus massa at urnaaculis estie. Sed
+                                aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla sed medy
+                                fringilla vitae.</p>
+                            <div class="why-choose-one__left-learning-box">
+                                <div class="icon">
+                                    <span class="icon-professor"></span>
+                                </div>
+                                <div class="text">
+                                    <h4>Start learning from our experts and <br>enhance your skills</h4>
+                                </div>
+                            </div>
+                            <div class="why-choose-one__left-list">
+                                <ul class="list-unstyled">
+                                    <li class="why-choose-one__left-list-single">
+                                        <div class="icon">
+                                            <span class="icon-confirmation"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Making this the first true on the Internet</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="why-choose-one__left-list-single">
+                                        <div class="icon">
+                                            <span class="icon-confirmation"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Lorem Ipsum is not simply random text</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="why-choose-one__left-list-single">
+                                        <div class="icon">
+                                            <span class="icon-confirmation"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p> If you are going to use a passage</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Why Choose One Left-->
+
+                    <!--Start Why Choose One Right-->
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="why-choose-one__right wow slideInRight animated clearfix" data-wow-delay="0ms"
+                            data-wow-duration="1500ms">
+                            <div class="why-choose-one__right-img clearfix">
+                                <img src="Assets_raj/images/resources/why-choose-v1-img.jpg" alt="" />
+                                <div class="why-choose-one__right-img-overlay">
+                                    <p>We’re the best institution</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Why Choose One Right-->
+
+                </div>
+            </div>
+        </section>
+        <!--Why Choose One End-->
+
+
+
+        <!--Blog One Start-->
+        <section class="blog-one">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">Directly from the Blog</span>
+                    <h2 class="section-title__title">Latest Articles</h2>
+                </div>
+                <div class="row">
+                    <!--Start Single Blog One-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__single-img">
+                                <img src="Assets_raj/images/blog/blog-v1-img1.jpg" alt="" />
+                            </div>
+                            <div class="blog-one__single-content">
+                                <div class="blog-one__single-content-overlay-mata-info">
+                                    <ul class="list-unstyled">
+                                        <li><a href="#"><span class="icon-clock"></span>20 June</a></li>
+                                        <li><a href="#"><span class="icon-user"></span>Admin </a></li>
+                                        <li><a href="#"><span class="icon-chat"></span> Comments</a></li>
+                                    </ul>
+                                </div>
+                                <h2 class="blog-one__single-content-title"><a href="news-details.html">Helping Answers
+                                        Stand out in Discussions</a></h2>
+                                <p class="blog-one__single-content-text">Lorem ipsum is simply free text on used by
+                                    copytyping refreshing the whole area.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Blog One-->
+
+                    <!--Start Single Blog One-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__single-img">
+                                <img src="Assets_raj/images/blog/blog-v1-img2.jpg" alt="" />
+                            </div>
+                            <div class="blog-one__single-content">
+                                <div class="blog-one__single-content-overlay-mata-info">
+                                    <ul class="list-unstyled">
+                                        <li><a href="#"><span class="icon-clock"></span>20 June</a></li>
+                                        <li><a href="#"><span class="icon-user"></span>Admin </a></li>
+                                        <li><a href="#"><span class="icon-chat"></span> Comments</a></li>
+                                    </ul>
+                                </div>
+                                <h2 class="blog-one__single-content-title"><a href="news-details.html">Helping Answers
+                                        Stand out in Discussions</a></h2>
+                                <p class="blog-one__single-content-text">Lorem ipsum is simply free text on used by
+                                    copytyping refreshing the whole area.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Blog One-->
+
+                    <!--Start Single Blog One-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__single-img">
+                                <img src="Assets_raj/images/blog/blog-v1-img3.jpg" alt="" />
+                            </div>
+                            <div class="blog-one__single-content">
+                                <div class="blog-one__single-content-overlay-mata-info">
+                                    <ul class="list-unstyled">
+                                        <li><a href="#"><span class="icon-clock"></span>20 June</a></li>
+                                        <li><a href="#"><span class="icon-user"></span>Admin </a></li>
+                                        <li><a href="#"><span class="icon-chat"></span> Comments</a></li>
+                                    </ul>
+                                </div>
+                                <h2 class="blog-one__single-content-title"><a href="news-details.html">Helping Answers
+                                        Stand out in Discussions</a></h2>
+                                <p class="blog-one__single-content-text">Lorem ipsum is simply free text on used by
+                                    copytyping refreshing the whole area.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Blog One-->
+                </div>
+            </div>
+        </section>
+        <!--Blog One End-->
+
+        <!--Start Newsletter One-->
+        <section class="newsletter-one">
+            <div class="container">
+                <div class="row">
+                    <!--Start Newsletter One Left-->
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="newsletter-one__left">
+                            <div class="section-title">
+                                <h2 class="section-title__title">Subscribe to Our <br>Newsletter to Get Daily
+                                    <br>Content!</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Newsletter One Left-->
+
+                    <!--Start Newsletter One Right-->
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="newsletter-one__right">
+                            <div class="shape1 zoom-fade"><img src="Assets_raj/images/shapes/thm-shape2.png" alt="" /></div>
+                            <div class="shape2 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms"><img
+                                    src="Assets_raj/images/shapes/thm-shape3.png" alt="" /></div>
+                            <div class="newsletter-form wow slideInDown" data-wow-delay="100ms"
+                                data-wow-duration="1500ms">
+                                <form action="#">
+                                    <input type="text" name="email" placeholder="Enter your email">
+                                    <button type="submit"><span class="icon-paper-plane"></span></button>
+                                </form>
+                                <div class="newsletter-one__right-checkbox">
+                                    <input type="checkbox" name="agree " id="agree" checked>
+                                    <label for="agree"><span></span>I agree to all terms and policies of the
+                                        company</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Newsletter One Right-->
+                </div>
+            </div>
+        </section>
+        <!--End Newsletter One-->
+
+
+
+
+        <!--Start Footer One-->
+      <div th:insert="Student/CommonComponent.html :: footer"></div>
+
+    <script src="Assets_raj/vendors/jquery/jquery-3.5.1.min.js"></script>
+    <script src="Assets_raj/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="Assets_raj/vendors/jarallax/jarallax.min.js"></script>
+    <script src="Assets_raj/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="Assets_raj/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="Assets_raj/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="Assets_raj/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="Assets_raj/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="Assets_raj/vendors/nouislider/nouislider.min.js"></script>
+    <script src="Assets_raj/vendors/odometer/odometer.min.js"></script>
+    <script src="Assets_raj/vendors/swiper/swiper.min.js"></script>
+    <script src="Assets_raj/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="Assets_raj/vendors/wnumb/wNumb.min.js"></script>
+    <script src="Assets_raj/vendors/wow/wow.js"></script>
+    <script src="Assets_raj/vendors/isotope/isotope.js"></script>
+    <script src="Assets_raj/vendors/countdown/countdown.min.js"></script>
+    <script src="Assets_raj/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="Assets_raj/vendors/twentytwenty/twentytwenty.js"></script>
+    <script src="Assets_raj/vendors/twentytwenty/jquery.event.move.js"></script>
+    <script src="Assets_raj/vendors/parallax/parallax.min.js"></script>
+
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+
+    <!-- template js -->
+    <script src="Assets_raj/js/zilom.js"></script>
+
+
+</body>
+
+</html>	
